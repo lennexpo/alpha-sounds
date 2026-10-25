@@ -210,7 +210,8 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--gold);outline-of
 .site-footer a{text-decoration:none;font-weight:700;color:var(--text)}
 .site-footer a:hover{color:var(--golddk)}
 .foot-logo{font-family:Roboto,system-ui,sans-serif;font-weight:900;font-size:26px;letter-spacing:.16em;color:var(--ink);display:block;margin-bottom:10px}
-.legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px}
+.legal .credit{text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:4px}
 
 /* Lightbox */
 #lb{border:0;padding:0;background:transparent;max-width:94vw;max-height:94vh;overflow:visible}
@@ -345,7 +346,7 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--gold);outline-of
 <div><h3>Pages</h3><ul><li><a href="services.html">Services</a></li><li><a href="work.html">Work</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact and FAQ</a></li></ul></div>
 <div><h3>Contact</h3><ul><li><a href="tel:+263776229138">+263 776 229 138</a></li><li><a href="https://wa.me/263776229138" rel="noopener">WhatsApp</a></li><li><a href="contact.html#quote">Request a quote</a></li></ul></div>
 </div>
-<p class="legal">&copy; 2026 Alpha Sound Engineering. Harare, Zimbabwe.</p>
+<div class="legal"><a class="credit" href="https://invitt.co.zw" target="_blank" rel="noopener">Website designed by Invitt Co</a><span>&copy; 2026 Alpha Sound Engineering. Harare, Zimbabwe.</span></div>
 </div></footer>
 <div class="bar"><a class="btn btn-primary" href="tel:+263776229138">Call now</a><a class="btn btn-wa" href="https://wa.me/263776229138" rel="noopener">WhatsApp</a></div>
 <script>
