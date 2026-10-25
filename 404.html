@@ -54,7 +54,8 @@ p{margin:0 0 16px}
 /* Header */
 .site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:72px;position:relative}
-.logo{font-family:Roboto,system-ui,sans-serif;font-weight:900;font-size:28px;letter-spacing:.16em;text-decoration:none;color:var(--ink)}
+.logo{font-family:Roboto,system-ui,sans-serif;font-weight:900;font-size:28px;letter-spacing:.12em;white-space:nowrap;text-decoration:none;color:var(--ink)}
+@media (max-width:700px){.logo{font-size:21px;letter-spacing:.08em}}
 nav ul{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
 nav a:not(.btn){display:block;padding:10px 14px;text-decoration:none;font-weight:700;font-size:15px;color:var(--text);border-radius:8px}
 nav a:not(.btn):hover{background:var(--soft);color:var(--ink)}
@@ -256,7 +257,7 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--gold);outline-of
 </style>
 </head><body>
 <main class="section" style="min-height:100vh;display:grid;align-items:center"><div class="wrap" style="text-align:center">
-<a class="logo" href="/" style="display:inline-block;margin-bottom:28px">ALPHA</a>
+<a class="logo" href="/" style="display:inline-block;margin-bottom:28px">ALFA SOUNDS</a>
 <h1 style="margin-bottom:16px">Page not found</h1>
 <p class="lead" style="margin:0 auto 28px">That page does not exist or has moved. Head back to the homepage, or call Alpha directly.</p>
 <div class="cta" style="justify-content:center"><a class="btn btn-primary" href="/">Go to homepage</a><a class="btn btn-outline" href="tel:+263776229138">Call +263 776 229 138</a></div>

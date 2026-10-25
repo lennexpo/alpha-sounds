@@ -69,7 +69,8 @@ p{margin:0 0 16px}
 /* Header */
 .site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:72px;position:relative}
-.logo{font-family:Roboto,system-ui,sans-serif;font-weight:900;font-size:28px;letter-spacing:.16em;text-decoration:none;color:var(--ink)}
+.logo{font-family:Roboto,system-ui,sans-serif;font-weight:900;font-size:28px;letter-spacing:.12em;white-space:nowrap;text-decoration:none;color:var(--ink)}
+@media (max-width:700px){.logo{font-size:21px;letter-spacing:.08em}}
 nav ul{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
 nav a:not(.btn){display:block;padding:10px 14px;text-decoration:none;font-weight:700;font-size:15px;color:var(--text);border-radius:8px}
 nav a:not(.btn):hover{background:var(--soft);color:var(--ink)}
@@ -275,7 +276,7 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--gold);outline-of
 </head><body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap nav-wrap">
-<a class="logo" href="index.html" aria-label="Alpha home">ALPHA</a>
+<a class="logo" href="index.html" aria-label="Alfa Sounds home">ALFA SOUNDS</a>
 <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span><span></span></button>
 <nav id="nav" aria-label="Main"><ul>
 <li><a href="index.html">Home</a></li>
