@@ -1,1 +1,24 @@
-{"name":"Alpha Sound Engineering","short_name":"Alpha","start_url":"/","display":"browser","background_color":"#14161A","theme_color":"#14161A","icons":[{"src":"/icon-192.png","sizes":"192x192","type":"image/png"},{"src":"/icon-512.png","sizes":"512x512","type":"image/png"}]}
+{
+  "name": "Alpha Sound Engineering",
+  "short_name": "Alfa Sounds",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#14161A",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "description": "Live sound engineer in Harare, Zimbabwe: PA setup, live mixing, conference sound, recording and cable care.",
+  "lang": "en-ZW",
+  "id": "/",
+  "scope": "/"
+}

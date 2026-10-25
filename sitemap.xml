@@ -1,33 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://alfasounds.co.zw/</loc>
     <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/og-share.jpg</image:loc>
+      <image:caption>Alpha, a live sound engineer in Harare, Zimbabwe, with equipment at a live event</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/mixing-desk.webp</image:loc>
+      <image:caption>Large live mixing desk with rows of faders and knobs</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/speaker-setup.webp</image:loc>
+      <image:caption>Alpha setting up a PA speaker on a stand at a venue</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/alpha-on-stage.webp</image:loc>
+      <image:caption>Alpha on stage holding a coil of cable at a live event venue</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/rack-wiring.webp</image:loc>
+      <image:caption>Equipment rack with neatly labelled cables</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/mixer-faders.webp</image:loc>
+      <image:caption>Close view of mixer faders at a live event</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://alfasounds.co.zw/services.html</loc>
     <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://alfasounds.co.zw/work.html</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://alfasounds.co.zw/about.html</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://alfasounds.co.zw/contact.html</loc>
     <lastmod>2026-10-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alfasounds.co.zw/work.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/speaker-setup.webp</image:loc>
+      <image:caption>Alpha setting up a PA speaker on a stand at a venue</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/mixing-desk.webp</image:loc>
+      <image:caption>Large live mixing desk with rows of faders and knobs</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/keyboards.webp</image:loc>
+      <image:caption>Two keyboards set up for a live performance</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/cable-tester.webp</image:loc>
+      <image:caption>Cable tester being used in front of a mixing desk</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/rack-wiring.webp</image:loc>
+      <image:caption>Equipment rack with neatly labelled cables</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/mixer-faders.webp</image:loc>
+      <image:caption>Close view of mixer faders at a live event</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/stage-cables.webp</image:loc>
+      <image:caption>Stage cables and equipment being organised</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/cable-testing.webp</image:loc>
+      <image:caption>Testing a cable with a handheld tester at the mixer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/alpha-on-stage.webp</image:loc>
+      <image:caption>Alpha on stage holding a coil of cable at a live event venue</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alfasounds.co.zw/about.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <image:image>
+      <image:loc>https://alfasounds.co.zw/images/alpha-on-stage.webp</image:loc>
+      <image:caption>Alpha on stage holding a coil of cable at a live event venue</image:caption>
+    </image:image>
   </url>
 </urlset>
