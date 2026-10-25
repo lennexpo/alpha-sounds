@@ -73,6 +73,7 @@ git push
 ## 6. What changed
 
 - One page became five: Home, Services, Work, About, Contact (with quote form, FAQ and service area)
+- Page headers on Services, Work, About and Contact use photo backgrounds from images/services.jpg, works.jpg, about.jpg and contact.jpg. The zip includes only these 4 files in images, your other images stay as they are.
 - Every footer has a "Website designed by Invitt Co" link at the far left, opening https://invitt.co.zw in a new tab. Change the href in the footer of each page if the Invitt Co address is different.
 - Clean corporate light design (ink #14161A and gold #F2C14E), Roboto font, favicon files in the site root. The home hero has no Call or WhatsApp buttons, only the quote link; the nav Call now button and the CTA band stay. Every page is a standalone file with its own CSS and JavaScript built in (no `styles.css` or `main.js`). Only the `images` folder and Google Fonts are loaded separately.
 - Home hero keeps the full-width mixing desk photo background with the animated level meter
