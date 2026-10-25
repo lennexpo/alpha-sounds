@@ -1,56 +1,43 @@
-# Alpha site: install and deploy instructions
+# Alpha site: multi-page upgrade, install and deploy
 
 Project folder: `C:\Users\lenno\Documents\Invitt_Client_Websites\alpha-site`
 Live domain: `alfasounds.co.zw` (set in the `CNAME` file)
-
-All commands below use `$site` for the project folder:
-
-```powershell
-$site = Join-Path ([Environment]::GetFolderPath('MyDocuments')) "Invitt_Client_Websites\alpha-site"
-```
+GitHub repo: `https://github.com/lennexpo/alpha-sounds`
 
 ## 1. Download
 
-Download `alpha-site.zip` from Claude. It normally lands in `C:\Users\lenno\Downloads`.
-If the name is `alpha-site (1).zip`, change `$zip` below to match.
+Download `alpha-site-upgrade.zip` from Claude. It normally lands in `C:\Users\lenno\Downloads`.
+If the name is `alpha-site-upgrade (1).zip`, change `$zip` below to match.
 
-## 2. Install the upgraded site (PowerShell)
+The zip contains code files only. It does not contain the `images` folder, `CNAME` or the Google verification file, so those stay exactly as they are.
 
-This backs up the current `alpha-site` folder (renamed with a timestamp), extracts the upgraded site in its place, and opens it in your browser.
+## 2. Install (PowerShell)
 
-```powershell
-$parent = Join-Path ([Environment]::GetFolderPath('MyDocuments')) "Invitt_Client_Websites"
-$zip    = "$env:USERPROFILE\Downloads\alpha-site.zip"
-
-if (-not (Test-Path $zip)) { Write-Error "Zip not found: $zip"; return }
-
-if (Test-Path "$parent\alpha-site") {
-    Rename-Item "$parent\alpha-site" "alpha-site-backup-$(Get-Date -Format 'yyyyMMdd-HHmm')"
-}
-
-Expand-Archive -Path $zip -DestinationPath $parent -Force
-Start-Process "$parent\alpha-site\index.html"
-```
-
-Note: the backup step moves `CNAME` and `google26b7603aa9be1a65.html` into the backup folder. After installing, copy them back from the backup into the new `alpha-site` folder (or skip the backup step if you only want to add files).
-
-## 3. Add robots.txt, sitemap.xml and the updated instructions
-
-Move the three downloaded files into the project folder (this replaces the old `instructions.md`):
+This backs up the files that will be replaced, then extracts the upgrade into the project folder.
 
 ```powershell
 $site = Join-Path ([Environment]::GetFolderPath('MyDocuments')) "Invitt_Client_Websites\alpha-site"
-Move-Item "$env:USERPROFILE\Downloads\robots.txt","$env:USERPROFILE\Downloads\sitemap.xml","$env:USERPROFILE\Downloads\instructions.md" -Destination $site -Force
+$zip  = "$env:USERPROFILE\Downloads\alpha-site-upgrade.zip"
+
+if (-not (Test-Path $zip))  { Write-Error "Zip not found: $zip"; return }
+if (-not (Test-Path $site)) { Write-Error "Folder not found: $site"; return }
+
+$backup = Join-Path (Split-Path $site) "alpha-site-backup-$(Get-Date -Format 'yyyyMMdd-HHmm')"
+New-Item -ItemType Directory -Path $backup | Out-Null
+Get-ChildItem $site -File | Where-Object { $_.Extension -in '.html','.css','.js','.xml','.txt','.md' } | Copy-Item -Destination $backup
+
+Expand-Archive -Path $zip -DestinationPath $site -Force
+
+# Each page is now standalone, so remove the old shared files if an earlier install left them behind
+Remove-Item "$site\styles.css","$site\main.js" -ErrorAction SilentlyContinue
+
 Get-ChildItem $site
+Start-Process "$site\index.html"
 ```
 
-If the downloads are named `robots (1).txt`, `instructions (1).md` or similar, change the names to match.
+Expected files afterwards: `images`, `CNAME`, `google26b7603aa9be1a65.html`, `index.html`, `services.html`, `work.html`, `about.html`, `contact.html`, `404.html`, `robots.txt`, `sitemap.xml`, `instructions.md`. There is no `styles.css` or `main.js`.
 
-The folder should now contain: `images`, `CNAME`, `index.html`, `instructions.md`, `google26b7603aa9be1a65.html`, `robots.txt`, `sitemap.xml`.
-
-## 4. Preview over a local server (optional)
-
-Needed only if you want to test exactly as it behaves online.
+## 3. Preview over a local server (optional)
 
 ```powershell
 cd $site
@@ -59,63 +46,55 @@ python -m http.server 8080
 
 Open `http://localhost:8080`. Stop with `Ctrl+C`.
 
-## 5. Push to GitHub
+## 4. Push to GitHub
 
 ```powershell
 cd $site
 git status
 git add .
-git commit -m "Add robots.txt and sitemap.xml"
+git commit -m "Multi-page site upgrade"
 git push
 ```
 
-First time only, if the folder is not yet a git repo:
+If the push is rejected because GitHub has newer commits:
 
 ```powershell
-cd $site
-git init
-git branch -M main
-git remote add origin https://github.com/YOUR-USER/YOUR-REPO.git
-git add .
-git commit -m "Initial site"
-git push -u origin main
+git pull --rebase
+git push
 ```
 
-Replace the `origin` URL with the real repository address.
+## 5. After the push
 
-## 6. After the push
+- Wait a minute or two for GitHub Pages to deploy, then open each page on `https://alfasounds.co.zw`: home, services.html, work.html, about.html, contact.html.
+- In Google Search Console, open URL inspection for the homepage and click Request indexing.
+- Sitemaps: `sitemap.xml` is already submitted. Google re-reads it on its own and will pick up the 5 pages. You can resubmit it to speed that up.
+- Update the website field on the Google Business Profile to `https://alfasounds.co.zw`.
 
-- Open `https://alfasounds.co.zw/robots.txt` and `https://alfasounds.co.zw/sitemap.xml` and confirm both load.
-- In Google Search Console, go to Sitemaps and submit `sitemap.xml`.
-- The `google26b7603aa9be1a65.html` file must stay on the site so verification keeps working.
+## 6. What changed
 
-## 7. What changed in the site
+- One page became five: Home, Services, Work, About, Contact (with quote form, FAQ and service area)
+- Clean corporate light design (ink #14161A and gold #F2C14E), Roboto font, favicon files in the site root. The home hero has no Call or WhatsApp buttons, only the quote link; the nav Call now button and the CTA band stay. Every page is a standalone file with its own CSS and JavaScript built in (no `styles.css` or `main.js`). Only the `images` folder and Google Fonts are loaded separately.
+- Home hero keeps the full-width mixing desk photo background with the animated level meter
+- Phone number is the main call to action everywhere, with WhatsApp and quote request as backups
+- Quote form builds a WhatsApp message to +263 776 229 138 (nothing is stored)
+- Each service links to the quote form with the service pre-selected
+- FAQ with matching structured data for Google
+- Gallery photo viewer with next, previous and Esc to close
+- Mobile menu and sticky Call and WhatsApp bar on phones
+- 404 page, absolute social preview image, canonical links on every page
+- Sitemap lists all 5 pages
 
-- Hero uses the mixing desk photo with the animated level meter on top
-- WhatsApp buttons added (hero, contact section, mobile bar)
-- Sticky Call and WhatsApp bar on phones
-- All photos converted from JPG to WebP (about 1 MB total, was 1.8 MB), with set dimensions to stop layout jumping
-- Gallery opens photos full size in a viewer
-- New "How it works" section (3 steps), nav link added
-- Scroll fade-in, card hover lift (disabled for reduced-motion users)
-- Favicon, social preview tags, structured business data for Google
-- robots.txt and sitemap.xml added for search engines
+## 7. Confirm with the client
 
-## 8. Before going live
+- Service area: the pages say Alpha is based in Harare and to call for other areas. Correct this if it is wrong.
+- FAQ answers: "bring the equipment or only mix", "how early to book" and "which areas" are written in general terms. Make them specific if Alpha has set policies.
+- The WhatsApp number +263 776 229 138 must be registered on WhatsApp.
 
-- Confirm +263 776 229 138 is on WhatsApp (links use `wa.me/263776229138`).
-- Check the "How it works" wording matches how Alpha actually works.
-- Social previews need an absolute image URL. In `index.html`, change:
-  `<meta property="og:image" content="images/alpha-on-stage.webp">`
-  to
-  `<meta property="og:image" content="https://alfasounds.co.zw/images/alpha-on-stage.webp">`
-- Keep the `images` folder next to `index.html` on the host.
+## 8. Rollback
 
-## 9. Rollback
+Copy the files from `alpha-site-backup-<timestamp>` back into `alpha-site`, delete the new pages (`services.html`, `work.html`, `about.html`, `contact.html`, `404.html`), then commit and push.
 
-Locally: delete the new `alpha-site` folder and rename `alpha-site-backup-<timestamp>` back to `alpha-site`.
-
-On GitHub: undo the last commit with:
+Or undo the commit on GitHub:
 
 ```powershell
 cd $site
