@@ -81,23 +81,18 @@ nav li:last-child{margin-left:10px}
 .hero-img img{width:100%;height:100%;object-fit:cover}
 
 /* Home hero: full-width photo background with animated level meter */
-.hero-dark{padding:96px 0 84px;background:linear-gradient(90deg,rgba(20,22,26,.94) 35%,rgba(20,22,26,.6)),#14161A url(images/mixing-desk.webp) center/cover;border-bottom:1px solid var(--ink)}
+.hero-dark{padding:120px 0 108px;background:linear-gradient(90deg,rgba(20,22,26,.94) 35%,rgba(20,22,26,.6)),#14161A url(images/mixing-desk.webp) center/cover;border-bottom:1px solid var(--ink)}
+.hero-dark .hero-text{max-width:680px}
 .hero-dark h1{color:#fff}
 .hero-dark .eyebrow{color:var(--gold)}
 .hero-dark .lead{color:#C9CFD9}
 .hero-dark .sub-cta a{color:#fff;text-decoration-color:var(--gold)}
 .hero-dark .sub-cta a:hover{color:var(--gold)}
-.meter{background:var(--ink);border-radius:22px;padding:28px 26px 22px;display:flex;gap:10px;align-items:flex-end;height:300px;box-shadow:0 20px 50px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.08)}
-.meter i{flex:1;height:100%;display:flex;flex-direction:column-reverse;gap:4px;justify-content:flex-start}
-.meter i b{display:block;height:100%;border-radius:3px;background:linear-gradient(to top,#3DDC84 0 55%,var(--gold) 55% 82%,#F0554A 82%);transform-origin:bottom;animation:lvl 1.6s ease-in-out infinite alternate;-webkit-mask:repeating-linear-gradient(to top,#000 0 9px,transparent 9px 13px);mask:repeating-linear-gradient(to top,#000 0 9px,transparent 9px 13px)}
+.meter{background:var(--ink);display:flex;gap:4px;align-items:flex-end;height:190px;padding:28px 12px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.meter i{flex:1;height:100%;display:flex;flex-direction:column-reverse;gap:3px;justify-content:flex-start}
+.meter i b{display:block;height:100%;border-radius:2px;background:linear-gradient(to top,#3DDC84 0 55%,var(--gold) 55% 82%,#F0554A 82%);transform-origin:bottom;animation:lvl var(--t,1.6s) ease-in-out infinite alternate;animation-delay:var(--d,0s);-webkit-mask:repeating-linear-gradient(to top,#000 0 6px,transparent 6px 9px);mask:repeating-linear-gradient(to top,#000 0 6px,transparent 6px 9px)}
 @keyframes lvl{from{clip-path:inset(var(--a) 0 0 0)}to{clip-path:inset(var(--b) 0 0 0)}}
-.meter i:nth-child(1) b{--a:30%;--b:55%}
-.meter i:nth-child(2) b{--a:10%;--b:40%;animation-delay:-.4s}
-.meter i:nth-child(3) b{--a:45%;--b:20%;animation-delay:-.9s}
-.meter i:nth-child(4) b{--a:20%;--b:60%;animation-delay:-.2s}
-.meter i:nth-child(5) b{--a:5%;--b:35%;animation-delay:-1.1s}
-.meter i:nth-child(6) b{--a:40%;--b:15%;animation-delay:-.6s}
-.meter i:nth-child(7) b{--a:25%;--b:50%;animation-delay:-.3s}
+@media (max-width:700px){.meter{height:140px;padding:20px 8px 14px;gap:3px}.meter i:nth-child(n+25){display:none}}
 
 /* Inner page header */
 .page-hero{padding:64px 0 48px;background:var(--soft);border-bottom:1px solid var(--line)}
@@ -278,15 +273,15 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--gold);outline-of
 </ul></nav></div></header>
 
 <main id="main">
-<section class="hero hero-dark"><div class="wrap hero-grid">
-<div class="rv">
+<section class="hero hero-dark"><div class="wrap">
+<div class="rv hero-text">
 <p class="eyebrow">Professional live sound engineer &middot; Zimbabwe</p>
 <h1>Clear, balanced sound for every event</h1>
 <p class="lead">For church services, conferences, concerts and studio sessions. Alpha sets up, mixes and looks after the system from the first cable to the last song.</p>
 <p class="sub-cta"><a href="contact.html#quote">Request a quote online</a></p>
 </div>
-<div class="meter" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
 </div></section>
+<div class="meter" aria-hidden="true"><i><b style="--a:32%;--b:59%;--d:-0.9s;--t:2.03s"></b></i><i><b style="--a:33%;--b:32%;--d:-0.81s;--t:1.73s"></b></i><i><b style="--a:15%;--b:55%;--d:-0.82s;--t:1.77s"></b></i><i><b style="--a:15%;--b:10%;--d:-0.71s;--t:1.33s"></b></i><i><b style="--a:38%;--b:55%;--d:-1.42s;--t:1.77s"></b></i><i><b style="--a:42%;--b:29%;--d:-1.54s;--t:1.79s"></b></i><i><b style="--a:43%;--b:45%;--d:-0.25s;--t:1.21s"></b></i><i><b style="--a:37%;--b:8%;--d:-0.1s;--t:1.37s"></b></i><i><b style="--a:19%;--b:42%;--d:-0.05s;--t:1.62s"></b></i><i><b style="--a:32%;--b:41%;--d:-1.35s;--t:1.67s"></b></i><i><b style="--a:44%;--b:22%;--d:-0.8s;--t:1.8s"></b></i><i><b style="--a:33%;--b:45%;--d:-0.45s;--t:2.1s"></b></i><i><b style="--a:9%;--b:49%;--d:-0.41s;--t:1.88s"></b></i><i><b style="--a:36%;--b:22%;--d:-0.05s;--t:1.71s"></b></i><i><b style="--a:10%;--b:29%;--d:-0.17s;--t:1.46s"></b></i><i><b style="--a:8%;--b:5%;--d:-1.36s;--t:1.2s"></b></i><i><b style="--a:17%;--b:62%;--d:-0.08s;--t:1.54s"></b></i><i><b style="--a:29%;--b:30%;--d:-0.12s;--t:1.77s"></b></i><i><b style="--a:47%;--b:21%;--d:-0.54s;--t:1.48s"></b></i><i><b style="--a:4%;--b:30%;--d:-1.21s;--t:1.31s"></b></i><i><b style="--a:19%;--b:49%;--d:-0.16s;--t:1.25s"></b></i><i><b style="--a:35%;--b:15%;--d:-1.09s;--t:1.37s"></b></i><i><b style="--a:36%;--b:16%;--d:-1.58s;--t:1.89s"></b></i><i><b style="--a:30%;--b:45%;--d:-0.61s;--t:1.56s"></b></i><i><b style="--a:17%;--b:4%;--d:-0.43s;--t:2.07s"></b></i><i><b style="--a:41%;--b:23%;--d:-1.6s;--t:1.22s"></b></i><i><b style="--a:15%;--b:29%;--d:-1.59s;--t:1.74s"></b></i><i><b style="--a:40%;--b:10%;--d:-0.07s;--t:1.33s"></b></i><i><b style="--a:32%;--b:20%;--d:-0.02s;--t:1.75s"></b></i><i><b style="--a:22%;--b:28%;--d:-0.12s;--t:1.28s"></b></i><i><b style="--a:41%;--b:44%;--d:-0.39s;--t:1.74s"></b></i><i><b style="--a:27%;--b:43%;--d:-0.73s;--t:2.06s"></b></i><i><b style="--a:34%;--b:57%;--d:-0.92s;--t:1.98s"></b></i><i><b style="--a:15%;--b:44%;--d:-0.25s;--t:2.02s"></b></i><i><b style="--a:43%;--b:19%;--d:-1.16s;--t:1.34s"></b></i><i><b style="--a:44%;--b:39%;--d:-0.31s;--t:2.06s"></b></i><i><b style="--a:34%;--b:42%;--d:-0.13s;--t:1.24s"></b></i><i><b style="--a:10%;--b:6%;--d:-0.82s;--t:1.43s"></b></i><i><b style="--a:29%;--b:20%;--d:-0.67s;--t:2.01s"></b></i><i><b style="--a:35%;--b:22%;--d:-0.83s;--t:2.04s"></b></i><i><b style="--a:8%;--b:12%;--d:-0.37s;--t:1.7s"></b></i><i><b style="--a:43%;--b:43%;--d:-0.12s;--t:1.39s"></b></i><i><b style="--a:17%;--b:51%;--d:-0.03s;--t:1.44s"></b></i><i><b style="--a:32%;--b:19%;--d:-0.1s;--t:1.36s"></b></i><i><b style="--a:27%;--b:37%;--d:-0.92s;--t:1.32s"></b></i><i><b style="--a:27%;--b:12%;--d:-1.43s;--t:2.08s"></b></i><i><b style="--a:46%;--b:50%;--d:-1.11s;--t:1.73s"></b></i><i><b style="--a:12%;--b:41%;--d:-0.06s;--t:1.22s"></b></i></div>
 
 <section class="strip" aria-label="Why choose Alpha"><div class="wrap strip-grid">
 <div><b>One engineer</b><span>From setup to the last song</span></div>
