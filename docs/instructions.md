@@ -4,6 +4,20 @@ Project folder: `C:\Users\lenno\Documents\Invitt_Client_Websites\alpha-site`
 Live domain: `alfasounds.co.zw` (set in the `CNAME` file)
 GitHub repo: `https://github.com/lennexpo/alpha-sounds`
 
+## Rules for every PowerShell command
+
+- Every command that extracts a delivered zip ends by deleting that zip from Downloads, so no zips pile up.
+- The pattern is: extract with `Expand-Archive`, remove any obsolete files, then `Remove-Item` on the zip.
+- Always include the command to move or extract the delivered files into the project folder.
+- Only the move or extract commands are given, with no npm install or other setup unless asked.
+
+```powershell
+$site = Join-Path ([Environment]::GetFolderPath('MyDocuments')) "Invitt_Client_Websites\alpha-site"
+$zip  = "$env:USERPROFILE\Downloads\<delivered-file>.zip"
+Expand-Archive -Path $zip -DestinationPath $site -Force
+Remove-Item $zip
+```
+
 ## 1. Download
 
 Download `alpha-site-upgrade.zip` from Claude. It normally lands in `C:\Users\lenno\Downloads`.
@@ -27,6 +41,7 @@ New-Item -ItemType Directory -Path $backup | Out-Null
 Get-ChildItem $site -File | Where-Object { $_.Extension -in '.html','.css','.js','.xml','.txt','.md' } | Copy-Item -Destination $backup
 
 Expand-Archive -Path $zip -DestinationPath $site -Force
+Remove-Item $zip
 
 # Each page is now standalone, so remove the old shared files if an earlier install left them behind
 Remove-Item "$site\styles.css","$site\main.js" -ErrorAction SilentlyContinue
