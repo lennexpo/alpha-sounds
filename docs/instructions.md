@@ -35,7 +35,7 @@ Get-ChildItem $site
 Start-Process "$site\index.html"
 ```
 
-Expected files afterwards: `images`, `CNAME`, `google26b7603aa9be1a65.html`, `index.html`, `services.html`, `work.html`, `about.html`, `contact.html`, `404.html`, `robots.txt`, `sitemap.xml`, `instructions.md`. There is no `styles.css` or `main.js`.
+Expected files afterwards: `images`, `CNAME`, `google26b7603aa9be1a65.html`, `index.html`, `services.html`, `work.html`, `about.html`, `contact.html`, `404.html`, `robots.txt`, `sitemap.xml`, `favicon.ico`, `docs` (this file). There is no `styles.css`, `main.js`, `site.webmanifest` or separate favicon PNG/SVG files.
 
 ## 3. Preview over a local server (optional)
 
@@ -77,7 +77,7 @@ git push
 - Home page: the animated level meter is a full-width strip (48 bars) directly below the hero photo, not inside the hero.
 - Section colors: alternating white and a deeper blue-gray (#E4E9F1) with #CDD4DF borders. Cards, checklist rows, steps and the quote form are blue-gray on white sections and white on blue-gray sections, so they always stand out.
 - Every footer has a "Website designed by Invitt Co" link at the far right of the footer line, after the copyright text, opening https://invitt.co.zw in a new tab. Change the href in the footer of each page if the Invitt Co address is different.
-- Clean corporate light design (ink #14161A and gold #F2C14E), Roboto font, favicon files in the site root. The home hero has no Call or WhatsApp buttons, only the quote link; the nav Call now button and the CTA band stay. Every page is a standalone file with its own CSS and JavaScript built in (no `styles.css` or `main.js`). Only the `images` folder and Google Fonts are loaded separately.
+- Clean corporate light design (ink #14161A and gold #F2C14E), Roboto font, favicons embedded in each page's code (only favicon.ico stays in the root, for Google and old browsers; images/logo.png is the logo used in the structured data). The home hero has no Call or WhatsApp buttons, only the quote link; the nav Call now button and the CTA band stay. Every page is a standalone file with its own CSS and JavaScript built in (no `styles.css` or `main.js`). Only the `images` folder and Google Fonts are loaded separately.
 - Home hero keeps the full-width mixing desk photo background with the animated level meter
 - Phone number is the main call to action everywhere, with WhatsApp and quote request as backups
 - Quote form builds a WhatsApp message to +263 776 229 138 (nothing is stored)
